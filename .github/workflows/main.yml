@@ -8,6 +8,9 @@ jobs:
     
     steps:
     
+    - name: mkdir
+      run: mkdir screenshot
+      
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
