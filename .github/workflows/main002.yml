@@ -20,3 +20,11 @@ jobs:
         source: https://bitflyer.com/ja-jp/ex/buysell/${{matrix.coinname}}
         destination: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}.png
         width: ${{ matrix.width }}
+        
+    - name: download
+      uses: actions/download-artifact@v2
+      with:
+        name: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}.png
+        
+    - name: ls
+      run: ls -al
