@@ -18,7 +18,7 @@ jobs:
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://bitflyer.com/ja-jp/ex/buysell/${{matrix.coinname}}
-        destination: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}.png
+        destination: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}
         width: ${{ matrix.width }}
         
     - name: download
