@@ -33,6 +33,7 @@ jobs:
     name: job2
     needs:
       -  screenshot
+    runs-on: ubuntu-latest
     steps:
     - name: ls
       run: ls -al
