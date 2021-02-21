@@ -7,14 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
-        destination: screenshot.png
+        destination: screenshot000.png
+    
+    - name: Screenshot Website
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: https://github.com/swinton/screenshot-website
+        destination: screenshot001.png
+    
+    - name: ls
+      run: ls -al
+      
     - name: download
       uses: actions/download-artifact@v2
       with:
         name: screenshot
+        
     - name: ls
       run: ls -al
