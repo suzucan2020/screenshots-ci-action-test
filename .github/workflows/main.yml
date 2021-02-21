@@ -12,3 +12,5 @@ jobs:
       with:
         source: https://github.com/swinton/screenshot-website
         destination: screenshot.png
+    - name: ls
+      run: ls -al
