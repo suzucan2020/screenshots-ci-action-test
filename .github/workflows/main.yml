@@ -12,13 +12,13 @@ jobs:
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
-        destination: screenshot000.png
+        destination: screenshot/000.png
     
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
-        destination: screenshot001.png
+        destination: screenshot/001.png
     
     - name: ls
       run: ls -al
