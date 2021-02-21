@@ -11,4 +11,5 @@ jobs:
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
-        destination: screenshot.png
+        #destination: screenshot.png
+        path: screenshot.png
