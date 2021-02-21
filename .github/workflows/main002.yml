@@ -28,3 +28,11 @@ jobs:
         
     - name: ls
       run: ls -al
+      
+  job2:
+    name: job2
+    needs:
+      -  screenshot
+    steps:
+    - name: ls
+      run: ls -al
