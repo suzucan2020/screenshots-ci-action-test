@@ -9,7 +9,7 @@ jobs:
     steps:
     
     - name: mkdir
-      run: mkdir screenshot
+      run: mkdir /home/runner/work/_temp/screenshot
       
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
