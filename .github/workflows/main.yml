@@ -15,6 +15,6 @@ jobs:
     - name: download
       uses: actions/download-artifact@v2
       with:
-        name: screenshot.png
+        name: screenshot
     - name: ls
       run: ls -al
