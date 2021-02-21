@@ -8,28 +8,25 @@ jobs:
     
     steps:
     
-    - name: mkdir
-      run: mkdir /home/runner/work/_temp/screenshot
-      
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
-        destination: screenshot/000.png
+        destination: screenshot-000.png
     
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://github.com/swinton/screenshot-website
-        destination: screenshot/001.png
+        destination: screenshot-001.png
     
     - name: ls
       run: ls -al
       
-    - name: download
-      uses: actions/download-artifact@v2
-      with:
-        name: screenshot
+#    - name: download
+#      uses: actions/download-artifact@v2
+#      with:
+#       name: screenshot
         
     - name: ls
       run: ls -al
