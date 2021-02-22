@@ -9,8 +9,8 @@ jobs:
     - uses: actions/checkout@master
     - name: create file
       run: |
-        mkdir -p hello
-        echo "hello world" > hello/hello.txt
+        mkdir -p date
+        date > date/date.txt
     - name: Commit files
       run: |
         git config --local user.email "suzucan2020@users.noreply.github.com"
