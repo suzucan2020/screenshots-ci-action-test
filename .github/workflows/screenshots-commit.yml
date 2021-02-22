@@ -1,0 +1,59 @@
+name: screenshot-commit-ci
+
+on: [push]
+
+jobs:
+  screenshot:
+    name: Screenshot
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        coinname: [btc,xrp,eth,xem]
+        width: [1200]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+
+    - name: Screenshot Website
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: https://bitflyer.com/ja-jp/ex/buysell/${{matrix.coinname}}
+        destination: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}.png
+        width: ${{ matrix.width }}
+        
+    - name: download
+      uses: actions/download-artifact@v2
+      with:
+        name: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}
+        
+    - name: ls
+      run: ls -al
+      
+  job2:
+    name: commit-screenshot
+    needs:
+      -  screenshot
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: download
+      uses: actions/download-artifact@v2
+    
+    - name: ls
+      run: ls -al
+      
+    - uses: actions/checkout@master
+    - name: create file
+      run: |
+        mkdir -p images
+        mv *.png images/
+    - name: Commit files
+      run: |
+        git config --local user.email "suzucan2020@users.noreply.github.com"
+        git config --local user.name "suzucan2020"
+        git add .
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
