@@ -1,10 +1,15 @@
 name: screenshot-commit-ci
 
-on: [push]
+#on: [push]
+
 #on:
 #  push:
 #    branches-ignore:
 #      - '**'
+
+on:
+  schedule:
+    - cron:  '*/1 * * * *'
 
 jobs:
   screenshot:
