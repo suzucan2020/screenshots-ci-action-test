@@ -9,6 +9,7 @@ jobs:
     - uses: actions/checkout@master
     - name: create file
       run: |
+        mkdir -p hello
         echo "hello" > hello/hello.txt
     - name: Commit files
       run: |
