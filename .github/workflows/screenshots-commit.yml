@@ -9,7 +9,7 @@ name: screenshot-commit-ci
 
 on:
   schedule:
-    - cron:  '*/1 * * * *'
+    - cron:  '* * * * *'
 
 jobs:
   screenshot:
