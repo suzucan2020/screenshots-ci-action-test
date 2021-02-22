@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@master
     - name: create file
       run: |
-        bash create_file.sh
+        echo "hello" > hello.txt
     - name: Commit files
       run: |
         git config --local user.email "suzucan2020@users.noreply.github.com"
