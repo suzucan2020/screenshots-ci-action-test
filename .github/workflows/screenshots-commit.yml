@@ -45,6 +45,8 @@ jobs:
     - uses: actions/checkout@master
     - name: create file
       run: |
+        ls -l
+        ls -l screenshot*
         mkdir -p images
         mv screenshot*/* images/
     - name: Commit files
