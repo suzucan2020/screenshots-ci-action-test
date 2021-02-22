@@ -1,10 +1,10 @@
 name: screenshot-commit-ci
 
-# on: [push]
-on:
-  push:
-    branches-ignore:
-      - '**'
+on: [push]
+#on:
+#  push:
+#    branches-ignore:
+#      - '**'
 
 jobs:
   screenshot:
@@ -54,6 +54,7 @@ jobs:
       
     - name: mv image & delete screenshot folder
       run: |
+        date > date/README.md
         ls -l
         ls -l screenshot*
         mkdir -p images
