@@ -10,7 +10,7 @@ jobs:
     - name: create file
       run: |
         mkdir -p hello
-        echo "hello" > hello/hello.txt
+        echo "hello world" > hello/hello.txt
     - name: Commit files
       run: |
         git config --local user.email "suzucan2020@users.noreply.github.com"
