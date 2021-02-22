@@ -21,7 +21,7 @@ jobs:
         destination: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}.png
         width: ${{ matrix.width }}
         
-    - name: download
+    - name: download artifact
       uses: actions/download-artifact@v2
       with:
         name: screenshot-${{ matrix.os }}-${{ matrix.width }}-${{matrix.coinname}}
@@ -36,19 +36,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - name: download
+    - name: chechout
+      uses: actions/checkout@master
+      
+    - name: ls
+      run: ls -al
+      
+    - name: download all artifact
       uses: actions/download-artifact@v2
     
     - name: ls
       run: ls -al
       
-    - uses: actions/checkout@master
-    - name: create file
+    - name: mv image & delete screenshot folder
       run: |
         ls -l
         ls -l screenshot*
         mkdir -p images
         mv screenshot*/* images/
+        rm -rf screenshot*
     - name: Commit files
       run: |
         git config --local user.email "suzucan2020@users.noreply.github.com"
