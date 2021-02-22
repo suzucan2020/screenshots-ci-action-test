@@ -1,6 +1,10 @@
 name: screenshot-commit-ci
 
-on: [push]
+# on: [push]
+on:
+  push:
+    branches-ignore:
+      - '**'
 
 jobs:
   screenshot:
